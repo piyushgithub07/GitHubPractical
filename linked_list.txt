@@ -1,0 +1,242 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class node
+{
+public:
+  int data;
+  node *nxt;
+    node (int val)
+  {
+    data = val;
+    nxt = NULL;
+  }
+};
+
+void insertT (node * &head, int val)
+{
+  node *n = new node (val);
+  if (head == NULL)
+    {
+      head = n;
+      return;
+    }
+  node *tmp = head;
+  while (tmp->nxt != NULL)
+    {
+      tmp = tmp->nxt;
+
+    }
+  tmp->nxt = n;
+}
+
+node *ro (node * &head, int k)
+{
+  if (!head || !head->nxt || k == 0)
+    {
+      return head;
+    }
+
+
+  node *cur = head;
+  int c = 1;
+  while (cur->nxt && ++c)
+    {
+      cur = cur->nxt;
+
+    }
+  cur->nxt = head;
+  k = k % c;
+  k = c - k;
+
+  while (k--)
+    {
+      cur = cur->nxt;
+    }
+  head = cur->nxt;
+  cur->nxt = NULL;
+
+  return head;
+
+}
+
+void display (node * head)
+{
+  node *tmp = head;
+  while (tmp != NULL)
+    {
+      cout << tmp->data << " ";
+      tmp = tmp->nxt;
+    }
+  cout << endl;
+
+}
+
+int length (node * head)
+{
+  int l = 0;
+  node *tmp = head;
+  while (tmp != NULL)
+    {
+      tmp = tmp->nxt;
+      l++;
+
+    }
+  return l;
+}
+
+//intersect the two list
+void intersect (node * &head1, node * &head2, int pos)
+{
+  node *tmp1 = head1;
+  pos--;
+  while (pos--)
+    {
+      tmp1 = tmp1->nxt;
+
+    }
+  node *tmp2 = head2;
+  while (tmp2->nxt != NULL)
+    {
+      tmp2 = tmp2->nxt;
+    }
+  tmp2->nxt = tmp1;
+}
+
+//find the intersection of two list
+int intersection (node * &head1, node * &head2)
+{
+
+  int l1 = length (head1);
+  int l2 = length (head2);
+
+
+
+  int d = 0;
+  node *ptr1;
+  node *ptr2;
+  if (l1 > l2)
+    {
+      d = l1 - l2;
+      ptr1 = head1;
+      ptr2 = head2;
+    }
+  else
+    {
+      d = l2 - l1;
+      ptr1 = head2;
+      ptr2 = head1;
+
+    }
+  while (d)
+    {
+
+      if (ptr1 == NULL)
+	{
+	  return -1;
+
+	}
+      ptr1 = ptr1->nxt;
+      d--;
+
+    }
+  while (ptr1 != NULL && ptr2 != NULL)
+    {
+      if (ptr1 == ptr2)
+	{
+	  return ptr1->data;
+	}
+      ptr1 = ptr1->nxt;
+      ptr2 = ptr2->nxt;
+
+    }
+  return -1;
+}
+void nthfromend(node *head,int n)
+{
+    node *start=new node(0);
+    start->nxt=head;
+    node *fast=start;
+    node *slow=start;
+    for(int i=1;i<=n;++i)
+    {
+        fast=fast->nxt;
+        
+    }
+    while(fast->nxt!=NULL)
+    {
+        fast=fast->nxt;
+        slow=slow->nxt;
+        
+    }
+    cout<<slow->nxt->data;
+    
+}
+node* delnthfromend(node *head,int n)
+{
+    node *start=new node(0);
+    start->nxt=head;
+    node *fast=start;
+    node *slow=start;
+    for(int i=1;i<=n;++i)
+    {
+        fast=fast->nxt;
+        
+    }
+    while(fast->nxt!=NULL)
+    {
+        fast=fast->nxt;
+        slow=slow->nxt;
+        
+    }
+    
+    slow->nxt=slow->nxt->nxt;
+    return slow->nxt;
+}
+//delete node if you are given a pointer to node only
+void delnode(node* ptr)
+{
+    if(ptr->nxt==NULL)
+    {
+        free(ptr);
+        return;
+    }
+    node* tmp=ptr->nxt; 
+    ptr->data=tmp->data;
+    ptr->nxt=tmp->nxt;
+    free(tmp);
+    return;
+}
+//reverse a linked list
+node* reverse(node* &head)
+{
+    node* p=NULL;
+    node* c=head;
+    node* n;
+    while(c!=NULL)
+    {
+        n=c->nxt;
+        c->nxt=p;
+        p=c;
+        c=n;
+        
+    }
+    return p;
+}
+
+int main ()
+{
+  node *head= NULL;
+  insertT (head, 1);
+  insertT (head, 2);
+  insertT (head, 3);
+  insertT (head, 4);
+  insertT (head, 5);
+  insertT (head, 6);
+  insertT (head, 9);
+  insertT (head, 10);
+  display (head);
+  
+  display (head);
+  return 0;
+}

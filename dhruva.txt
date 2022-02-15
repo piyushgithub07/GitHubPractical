@@ -1,0 +1,25 @@
+1	2abc 	3def
+4ghi	5	6
+7	8	9
+*	0wxyz	#
+
+unordered_map<int,string> keys;
+
+input: 23
+{ad,ae,af,b...,c...}
+
+  vector fun(unordered_map<int,string> m,int arr[])
+  {
+	vector<string>s;
+	string v;
+	int n=sizeof(arr)/sizeof(arr[0]);
+	for(int i=0;i<n;i++)
+	{
+		for(auto s:m)
+		{
+			if(m.first==arr[i])
+			{
+				s.cocncat(m.second);
+			}
+		
+			

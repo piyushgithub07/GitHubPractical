@@ -1,0 +1,18 @@
+Virtual private network :                                                                                                                                                                         
+1.A virtual private network extends a private network across a public network                                                                                        
+2.VPN, is an encrypted connection over the Internet from a device to a network.                                                                            
+3.The encrypted connection helps ensure that sensitive data is safely transmitted                                                                          
+4. It prevents unauthorized people from eavesdropping on the traffic and allows the user to conduct work remotely.
+
+Working of VPN:-
+1.A VPN hides your IP address by letting the network redirect it through a specially configured remote server run by a VPN host. 
+2.This means that if you surf online with a VPN, the VPN server becomes the source of your data.
+3.This means your Internet Service Provider (ISP) and other third parties cannot see which websites you visit or what data you send and receive online. 
+4.A VPN works like a filter that turns all your data into "gibberish". 
+5.Even if someone were to get their hands on your data, it would be useless
+
+Here’s how to surf securely with a VPN:-
+1.Once you are online, start your VPN. The VPN acts as a secure tunnel between you and the internet. 
+2.Your ISP and other third parties cannot detect this tunnel.
+3.Your device is now on the local network of the VPN, and your IP address can be changed to an IP address provided by the VPN server.
+You can now surf the internet at will, as the VPN protects all your personal data.
