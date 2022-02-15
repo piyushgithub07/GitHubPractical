@@ -1,3 +1,11 @@
+a
+b
+c
+d
+e
+f
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
