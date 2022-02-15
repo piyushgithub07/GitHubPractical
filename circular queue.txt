@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1
 2
 3
@@ -6,6 +7,16 @@
 6
 7
 
+=======
+6
+7
+a
+b
+c
+d
+e
+f
+>>>>>>> master
 
 
 #include <bits/stdc++.h>
@@ -120,6 +131,8 @@ int main()
     q.display();
     q.enque(8);
     return 0;
+
+    //Made changes by USA coder
 }
 
 
